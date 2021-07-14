@@ -1,13 +1,16 @@
 # CBV로 목록 페이지 만들기 
 
-from django.shortcuts import render
-from django.views.generic import ListView
+#from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 from .models import Post
 
 class PostList(ListView):
     model = Post
     ordering = '-pk'
 
+class PostDetail(DetailView):
+    model = Post 
+    
 """ 
 # FBV로 만들기 예제 
 from django.shortcuts import render
